@@ -1,0 +1,47 @@
+en:
+  common: 
+    errors: 'Filling errors'
+    create: 'Create'
+    edit: 'Edit'
+    delete: "Delete"
+    quest_to_delete: "Are you sure?"
+  will_paginate:
+    previous_label: 'Previous'
+    next_label: 'Next'
+  navigation:
+    log_in_sign_up: "Sign in/ Sign up"
+    all_campaigns: "All campaigns"
+    new_campaign: "New campaign"
+  campaigns:
+    index:
+      title: 'Campaigns'
+    new:
+      title: 'New campaign'
+    edit:
+      title: 'Edit campaign'
+    form:
+      submit:
+       '%{action} campaign'
+  layouts:
+    tags_cloud:
+      title: 'Tags cloud'
+    select_category: "Select category"
+    navigation:
+      log_in_sign_up: "Sign in/Sign up"
+    user_panel:
+      new_campaign: "Create campaign"
+      my_campaigns: "My campaigns"
+      my_contributions: "My contributions"
+      edit_profile: "Edit profile"
+      logout: "Log out"
+
+  categories:
+    index:
+      title: 'Categories'
+    new:
+      title: 'New category'
+    edit:
+      title: 'Edit category'
+    form:
+      submit:
+       '%{action} category'

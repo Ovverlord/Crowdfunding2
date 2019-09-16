@@ -1,0 +1,16 @@
+ ru:
+  activerecord:
+   models:
+    campaign: 'Кампания'
+   attributes:
+    campaign:
+     title: 'Название'
+     summary: 'Описание'
+     body: 'Содержание'
+     all_tags: 'Теги'
+     image: 'Главное изображение:'
+    category: 
+      name: 'Название'
+  errors: 
+    messages:
+      blank: 'не может быть пустым'

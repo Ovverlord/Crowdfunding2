@@ -1,0 +1,17 @@
+<div class="btn-group mx-2">
+  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= current_user.username %>
+  </button>
+  <div class="dropdown-menu">
+    <li class="nav-item">
+       <%= link_to t('.new_campaign'), new_campaign_path, class: 'nav-link' %>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to t('.edit_profile'), edit_user_registration_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
+    </li>
+  </div>
+</div>

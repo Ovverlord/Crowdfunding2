@@ -1,0 +1,12 @@
+<h1>
+  <%= @tag.name %>
+  <sup class="badge-pill badge-info">
+    <%= @tag.campaigns.count %>
+  </sup>
+</h1>
+
+<% if @tag.campaigns.empty? %>
+  <h2>Статей нет</h2>
+<% else %>
+  <%= render @tag.campaigns %>
+<% end %>

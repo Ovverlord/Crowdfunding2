@@ -1,0 +1,25 @@
+<article class="campaign">
+	<section class="campaign-head">
+		<h1><%= @campaign.title %></h1>
+		<small>
+			<time><%= @campaign.created_at.to_date.strftime("%d %B, %Y")%>	</time>
+
+			<% if @campaign.category.present? %>
+			 <%= link_to @campaign.category.name,@campaign.category%>
+			<% end %>
+			|
+			<%= link_to t('common.edit'),edit_campaign_path(@campaign),class: 'btn btn-outline-primary btn-sm'%>
+			|
+			<%= link_to t('common.delete'),campaign_path(@campaign), method: :delete, data:{confirm:'Sure?'},class: 'btn btn-outline-danger btn-sm'%>
+		</small>
+	</section>
+
+	<section class="campaign-body">
+		<%= markdown(@campaign.body) %>
+	</section>
+
+	<div class="container main", style="width:700px; height: auto">
+		<%= image_tag(@campaign.image,style:'width:100%') if @campaign.image.attached?%>
+	</div>
+
+</article>

@@ -1,0 +1,47 @@
+ru:
+  common: 
+    errors: 'Ошибки заполнения'
+    create: 'Создать'
+    edit: 'Изменить'
+    delete: "Удалить"
+    quest_to_delete: "Вы уверены?"
+  will_paginate:
+    previous_label: 'Предыдущая'
+    next_label: 'Следующая'
+  navigation:
+    log_in_sign_up: "Вход / Регистрация"
+    all_campaigns: "Все кампании"
+    new_campaign: "Новая кампания"
+  campaigns:
+    index:
+      title: 'Кампании'
+    new:
+      title: 'Новая кампания'
+    edit:
+      title: 'Редактирование кампании'
+    form:
+      submit:
+       '%{action} кампанию'
+  layouts:
+    tags_cloud:
+      title: 'Облако тегов'
+    select_category: "Выбрать категорию"
+    navigation:
+      log_in_sign_up: "Вход / Регистрация"
+    user_panel:
+      new_campaign: "Создать кампанию"
+      my_campaigns: "Мои кампании"
+      my_contributions: "Мои бонусы"
+      edit_profile: "Настройки профиля"
+      logout: "Выход"
+
+  categories:
+    index:
+      title: 'Категории'
+    new:
+      title: 'Новая категория'
+    edit:
+      title: 'Редактирование категории'
+    form:
+      submit:
+       '%{action} категорию'

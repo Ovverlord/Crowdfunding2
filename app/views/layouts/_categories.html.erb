@@ -1,0 +1,14 @@
+  <div class="card-block categories p-4 text-center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= t('layouts.select_category') %>
+      </button>
+      <div class="dropdown-menu">
+        <% Category.all.each do |category| %>
+          <li class="nav-item">
+            <%= link_to category.name, category, class: "nav-link" %>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </div>
