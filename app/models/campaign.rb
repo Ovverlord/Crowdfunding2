@@ -3,8 +3,10 @@ class Campaign < ApplicationRecord
 	has_one_attached :image
 	has_many :taggings,  dependent: :destroy
 	has_many :tags, through: :taggings
+	has_many :comments, dependent: :destroy
 	validates :title, :summary, :body, presence: true
 	belongs_to :category
+	belongs_to :user
 
 	def all_tags
 		self.tags.map(&:name).join(', ')

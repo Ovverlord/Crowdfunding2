@@ -5,8 +5,9 @@
 			<time><%= @campaign.created_at.to_date.strftime("%d %B, %Y")%>	</time>
 
 			<% if @campaign.category.present? %>
-			 <%= link_to @campaign.category.name,@campaign.category%>
+			<%= link_to @campaign.category.name,@campaign.category%>
 			<% end %>
+
 			|
 			<%= link_to t('common.edit'),edit_campaign_path(@campaign),class: 'btn btn-outline-primary btn-sm'%>
 			|
@@ -22,4 +23,20 @@
 		<%= image_tag(@campaign.image,style:'width:100%') if @campaign.image.attached?%>
 	</div>
 
+
 </article>
+
+
+<div class="comments">
+	<% unless @campaign.comments.empty? %>
+	<div class="comments p-2">
+		<%= render @campaign.comments %>
+	</div>
+	<% end %>
+</div>
+<% if user_signed_in? %>
+
+<%= render 'comments/form' %>
+
+<% end %>
+

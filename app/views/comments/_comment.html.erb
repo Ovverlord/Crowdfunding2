@@ -1,0 +1,13 @@
+<div class="media">
+
+  <div class="media-body">
+    <h5>
+      <%= comment.user.username %>
+    </h5>
+    <%= sanitize comment.reply %>
+  </div>
+
+  <%= link_to t('common.remove'), [comment.campaign, comment],
+              method: :delete,
+              data: {confirm: t('common.quest_to_delete')}, class: 'btn btn-outline-danger btn-sm' if (user_signed_in? && (current_user.admin? || comment.user == current_user)) %>
+</div>
