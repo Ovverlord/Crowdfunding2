@@ -6,14 +6,18 @@
 			|
 
 			<% if campaign.category.present? %>
-			  <%= link_to campaign.category.name,campaign.category%>
+			<%= link_to campaign.category.name,campaign.category%>
 			<% end %>
+
+
+			<% if user_signed_in? && (current_user.admin? || campaign.user == current_user) %>
 			|
 
 			<%= link_to t('common.edit'),edit_campaign_path(campaign), class: 'btn btn-outline-primary btn-sm'%>
 			|
 
 			<%= link_to t('common.delete'),campaign_path(campaign), method: :delete, data: {confirm:  t('common.quest_to_delete')},class: 'btn btn-outline-danger btn-sm'%>
+			<% end %>
 		</small>
 	</section>
 

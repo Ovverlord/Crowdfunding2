@@ -35,7 +35,9 @@ ru:
       edit_profile: "Настройки профиля"
       logout: "Выход"
 
-  categories:
+
+  admin:
+   categories:
     index:
       title: 'Категории'
     new:
@@ -45,3 +47,7 @@ ru:
     form:
       submit:
        '%{action} категорию'
+   admin_panel:
+    admin_panel: "Панель администратора"
+    categories_manage: "Управление категориями"
+

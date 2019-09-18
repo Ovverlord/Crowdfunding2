@@ -8,27 +8,22 @@
 			<%= link_to @campaign.category.name,@campaign.category%>
 			<% end %>
 
-			|
-			<%= link_to t('common.edit'),edit_campaign_path(@campaign),class: 'btn btn-outline-primary btn-sm'%>
-			|
-			<%= link_to t('common.delete'),campaign_path(@campaign), method: :delete, data:{confirm:'Sure?'},class: 'btn btn-outline-danger btn-sm'%>
 		</small>
-	</section>
-
-	<section class="campaign-body">
-		<%= markdown(@campaign.body) %>
 	</section>
 
 	<div class="container main", style="width:700px; height: auto">
 		<%= image_tag(@campaign.image,style:'width:100%') if @campaign.image.attached?%>
 	</div>
 
-
+	<section class="campaign-body">
+		<%= markdown(@campaign.body) %>
+	</section>
 </article>
 
 
 <div class="comments">
 	<% unless @campaign.comments.empty? %>
+	<h2>Comments</h2>
 	<div class="comments p-2">
 		<%= render @campaign.comments %>
 	</div>

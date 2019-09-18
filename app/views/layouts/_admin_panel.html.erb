@@ -1,9 +1,9 @@
 <div class="dropdown show mx-2">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= t('.admin_panel') %>
+    <%= t('admin.admin_panel.admin_panel') %>
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <%= link_to t('.change_categories'), admin_categories_path, class: 'dropdown-item' %>
+    <%= link_to t('admin.admin_panel.categories_manage'), admin_categories_path, class: 'dropdown-item' %>
     <%= link_to t('.change_users'), admin_users_path, class: 'dropdown-item' %>
   </div>
 </div>

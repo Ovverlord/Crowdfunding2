@@ -14,7 +14,15 @@
   </ul>
 
 
-
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <div class="col-md-4">
+        <% if user_signed_in? && current_user.admin? %>
+        <%= render 'layouts/admin_panel' %>
+        <% end %>
+      </div>
+    </li>
+  </ul>
 
 
   <form class="form-inline my-2 my-lg-0">
@@ -23,7 +31,7 @@
   </form>
 
 
-  <ul class="navbar-nav mr-auto">
+  <ul class="navbar-nav pull-xs-right">
 
     <li class="nav-item<%= " active" if I18n.locale == :ru %>">
       <%= link_to "Рус", {locale: :ru}, class: "nav-link" %>
@@ -31,15 +39,16 @@
     <li class="nav-item<%= " active" if I18n.locale == :en %>">
       <%= link_to "Eng", {locale: :en}, class: "nav-link" %>
     </li>
+
+
+
+    <% if user_signed_in? %>
+    <%= render 'layouts/user_panel' %>
+    <% else %>
+    <li class="navbar-nav mr-auto">
+      <%= link_to t('.log_in_sign_up'), new_user_session_path, class: "btn btn-dark" %>
+    </li>
+    <% end %>
   </ul>
-
-
-  <% if user_signed_in? %>
-  <%= render 'layouts/user_panel' %>
-  <% else %>
-  <li class="navbar-nav mr-auto">
-    <%= link_to t('.log_in_sign_up'), new_user_session_path, class: "nav-link" %>
-  </li>
-  <% end %>
 </div>
 </nav>

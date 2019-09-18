@@ -7,6 +7,12 @@ Rails.application.routes.draw do
 		end
 
 		resources :tags, only: [:index, :show]
-		resources :categories
+		resources :categories, only: [:show]
+
+		namespace :admin do
+			resources :categories, except: [:show]
+			resources :users
+		end
+
 	end
 end

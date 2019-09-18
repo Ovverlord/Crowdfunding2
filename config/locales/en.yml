@@ -35,7 +35,9 @@ en:
       edit_profile: "Edit profile"
       logout: "Log out"
 
-  categories:
+
+  admin:
+   categories:
     index:
       title: 'Categories'
     new:
@@ -45,3 +47,6 @@ en:
     form:
       submit:
        '%{action} category'
+   admin_panel:
+    admin_panel: "Admin panel"
+    categories_manage: "Categories manage"
