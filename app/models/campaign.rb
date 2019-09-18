@@ -4,7 +4,8 @@ class Campaign < ApplicationRecord
 	has_many :taggings,  dependent: :destroy
 	has_many :tags, through: :taggings
 	has_many :comments, dependent: :destroy
-	validates :title, :summary, :body, presence: true
+	validates :title, :summary, :body, :target_amount, presence: true
+	validates :target_amount, numericality: {only_integer: true, greater_than: 10}
 	belongs_to :category
 	belongs_to :user
 

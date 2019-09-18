@@ -9,8 +9,11 @@
      body: 'Содержание'
      all_tags: 'Теги'
      image: 'Главное изображение:'
+     target_amount: 'Целевая сумма'
+     category: 'Категория'
     category: 
       name: 'Название'
   errors: 
     messages:
       blank: 'не может быть пустым'
+      not_a_number: 'Должна быть числом'

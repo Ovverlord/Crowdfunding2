@@ -9,8 +9,11 @@
      body: 'Body'
      all_tags: 'Tags'
      image: 'Main image:'
+     target_amount: 'Target amount'
+     category: 'Category'
     category: 
      name: 'Название'
   errors: 
     messages:
       blank: 'can not be blank'
+      not_a_number: 'should be number'

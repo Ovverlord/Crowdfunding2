@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	before_action :set_campaign, only: [:show,:edit,:update,:destroy]
+    before_action :owner, only: [:edit, :update, :destroy]
 
 	def index
 		@campaigns = Campaign.paginate(page: params[:page], per_page: 5)
@@ -15,7 +16,7 @@ class CampaignsController < ApplicationController
 	end
 
 	def create
-		@campaign = Campaign.new(campaign_params)
+		@campaign = current_user.campaigns.build(campaign_params)
 		if @campaign.save
 			redirect_to @campaign, success: 'Кампания создана'
 		else
@@ -41,13 +42,20 @@ class CampaignsController < ApplicationController
 		redirect_to campaigns_path
 	end
 
+
+	def owner
+		unless @article.user == current_user || current_user.admin?
+			redirect_to root_path, danger: 'Нет доступа'
+		end
+	end
+
 	private
 	def set_campaign
 		@campaign = Campaign.find(params[:id])
 	end
 
 	def campaign_params
-		params.require(:campaign).permit(:title, :summary, :body, :image, :all_tags,:category_id)
+		params.require(:campaign).permit(:title, :summary, :body, :target_amount, :image, :all_tags, :category_id, :user_id)
 	end
 
 end
